@@ -1,6 +1,8 @@
+import java.util.Arrays;
+
 public class BubbleSort {
 
-    public static void sort(int[] data, boolean reverse) {
+    public static void bubbleSort(int[] data, boolean reverse) {
 
         if (data.length == 1) {
             return;
@@ -26,13 +28,17 @@ public class BubbleSort {
 
                 }
             }
+
         }
+        System.out.println(Arrays.toString(data));
+
     }
 
 
     public static void main(String[] args){
+        bubbleSort(new int[]{34,25,1,6,354,3,6,7,8,35,2,1,7,3,4,6565,7},true);
 
-        System.out.println(sort(, true));
+
     }
 
 
