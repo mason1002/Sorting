@@ -35,7 +35,7 @@ public class BubbleSort {
 
 
     public static void main(String[] args){
-        int[] input = new int[]{2,41,25,562,6,25,27,56,67,34,52,25,7,54,54,123,14};
+        int[] input = {2,41,25,562,6,25,27,56,67,34,52,25,7,54,54,123,14};
         System.out.println(Arrays.toString(bubbleSort(input, false)));
 
     }

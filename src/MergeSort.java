@@ -69,7 +69,7 @@ public class MergeSort {
     }
 
     public static void main(String[] args){
-        int[] input = new int[]{1, 5, 2, 25, 1, 42, 4, 46, 7};
+        int[] input = {1, 5, 2, 25, 1, 42, 4, 46, 7};
 
 
         System.out.println(Arrays.toString(mergeSort(input,

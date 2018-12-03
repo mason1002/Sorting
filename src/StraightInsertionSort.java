@@ -39,7 +39,7 @@ public class StraightInsertionSort {
     }
 
     public static void main(String[] args) {
-        int[] input = new int[]{1,2,4,12,46,45,7,78,8,964,54,75,36,52,14};
+        int[] input = {1,2,4,12,46,45,7,78,8,964,54,75,36,52,14};
 
         System.out.println(Arrays.toString(straightInsertionSort(input, false)));
     }
