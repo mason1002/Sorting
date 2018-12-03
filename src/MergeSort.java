@@ -8,9 +8,9 @@ public class MergeSort {
      * @param right
      * @param reverse
      */
-    private static int[] mergeSort(int[] data, int left, int right, boolean reverse) {
+    private static void mergeSort(int[] data, int left, int right, boolean reverse) {
         if (left >= right) {
-            return data;
+            return;
         }
 
         int mid = (left + right) / 2;
@@ -18,7 +18,6 @@ public class MergeSort {
         mergeSort(data, left, mid, reverse);
         mergeSort(data, mid + 1, right, reverse);
         merge(data, left, mid, right, reverse);
-        return data;
     }
 
     /**
@@ -55,11 +54,11 @@ public class MergeSort {
         while (i <= mid) {
             tmp[n++] = data[i++];
         }
-        while (j <= right){
+        while (j <= right) {
             tmp[n++] = data[j++];
         }
 
-        for (int k = 0; k < tmp.length; k++){
+        for (int k = 0; k < tmp.length; k++) {
             data[left + k] = tmp[k];
         }
 
@@ -68,12 +67,10 @@ public class MergeSort {
 
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int[] input = {1, 5, 2, 25, 1, 42, 4, 46, 7};
-
-
-        System.out.println(Arrays.toString(mergeSort(input,
-                0, 8, false)));
+        mergeSort(input, 0, input.length - 1, false);
+        System.out.println(Arrays.toString(input));
     }
 
 

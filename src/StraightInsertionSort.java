@@ -6,9 +6,9 @@ public class StraightInsertionSort {
      * @param data    array that needs to be sorted
      * @param reverse small->big (true) / big -> small (false)
      */
-    private static int[] straightInsertionSort(int[] data, boolean reverse) {
+    private static void straightInsertionSort(int[] data, boolean reverse) {
         if (data.length == 1) {
-            return data;
+            return;
         }
 
         int tmp;
@@ -34,14 +34,12 @@ public class StraightInsertionSort {
             data[n + 1] = tmp;
         }
 
-        return data;
-
     }
 
     public static void main(String[] args) {
         int[] input = {1,2,4,12,46,45,7,78,8,964,54,75,36,52,14};
-
-        System.out.println(Arrays.toString(straightInsertionSort(input, false)));
+        straightInsertionSort(input, false);
+        System.out.println(Arrays.toString(input));
     }
 
 

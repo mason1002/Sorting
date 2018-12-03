@@ -2,30 +2,40 @@ import java.util.Arrays;
 
 public class HeapSort {
 
-    private static int[] heapSort(int[] data, boolean reverse) {
+    /**
+     * @param data
+     * @param reverse
+     */
+    private static void heapSort(int[] data, boolean reverse) {
         if (data.length == 1) {
-            return data;
+            return;
         }
-
         for (int i = 0; i < data.length; i++) {
             buildHeap(data, 0, data.length - 1 - i, reverse);
             int tmp = data[0];
             data[0] = data[data.length - 1 - i];
             data[data.length - 1 - i] = tmp;
         }
-
-        return data;
     }
 
+    /**
+     * 将指定开始和结束段的数据建堆
+     *
+     * @param data
+     * @param beginIndex
+     * @param endIndex
+     * @param reverse
+     */
     private static void buildHeap(int[] data, int beginIndex, int endIndex, boolean reverse) {
 
-        if (beginIndex > endIndex) {
+        if (beginIndex >= endIndex) {
             return;
         }
+
         for (int i = (endIndex + beginIndex - 1) / 2; i >= beginIndex; i--) {
             int cur = i;
-            if (reverse) {
-                // 发生交换之后需要检查孙子节点、重孙子。。
+            if (reverse) { // 大顶堆，用于从小到大排序
+                // 发生交换之后需要检查孙子节点、重孙子...
                 while (2 * cur + 1 <= endIndex) {
                     int biggerChildIndex = 2 * cur + 1;
                     if (biggerChildIndex + 1 <= endIndex) {
@@ -44,14 +54,12 @@ public class HeapSort {
                     } else {
                         break;
                     }
-
                 }
-            } else {
-                //小顶堆，用来从大到小排序
+            } else { //小顶堆，用来从大到小排序
                 while (2 * cur + 1 <= endIndex) {
                     int smallerChildIndex = 2 * i + 1;
                     if (smallerChildIndex + 1 <= endIndex) {
-                        if (data[smallerChildIndex] > data[smallerChildIndex] + 1) {
+                        if (data[smallerChildIndex] > data[smallerChildIndex + 1]) {
                             smallerChildIndex = smallerChildIndex + 1;
                         }
                     }
@@ -71,10 +79,10 @@ public class HeapSort {
 //        System.out.println(Arrays.toString(data));
     }
 
-
     public static void main(String[] args) {
-        int[] input = {251,2412552,23,2,43,1,6,43,52,6,7,45,3,1};
-        System.out.println(Arrays.toString(heapSort(input, false)));
+        int[] input = {251, 2412552, 23, 2, 43, 1, 6, 43, 52, 6, 7, 45, 3, 1};
+        heapSort(input, false);
+        System.out.println(Arrays.toString(input));
 
     }
 }
