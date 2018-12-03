@@ -2,10 +2,10 @@ import java.util.Arrays;
 
 public class BubbleSort {
 
-    public static void bubbleSort(int[] data, boolean reverse) {
+    private static int[] bubbleSort(int[] data, boolean reverse) {
 
         if (data.length == 1) {
-            return;
+            return data;
         }
 
         for (int i = 0; i < data.length - 1; i++) {
@@ -30,14 +30,13 @@ public class BubbleSort {
             }
 
         }
-        System.out.println(Arrays.toString(data));
-
+        return data;
     }
 
 
     public static void main(String[] args){
-        bubbleSort(new int[]{34,25,1,6,354,3,6,7,8,35,2,1,7,3,4,6565,7},true);
-
+        int[] input = new int[]{2,41,25,562,6,25,27,56,67,34,52,25,7,54,54,123,14};
+        System.out.println(Arrays.toString(bubbleSort(input, false)));
 
     }
 

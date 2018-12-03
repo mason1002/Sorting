@@ -2,9 +2,9 @@ import java.util.Arrays;
 
 public class HeapSort {
 
-    public static void heapSort(int[] data, boolean reverse) {
+    private static int[] heapSort(int[] data, boolean reverse) {
         if (data.length == 1) {
-            return;
+            return data;
         }
 
         for (int i = 0; i < data.length; i++) {
@@ -14,8 +14,7 @@ public class HeapSort {
             data[data.length - 1 - i] = tmp;
         }
 
-        System.out.println(Arrays.toString(data));
-
+        return data;
     }
 
     private static void buildHeap(int[] data, int beginIndex, int endIndex, boolean reverse) {
@@ -53,7 +52,7 @@ public class HeapSort {
                     int smallerChildIndex = 2 * i + 1;
                     if (smallerChildIndex + 1 <= endIndex) {
                         if (data[smallerChildIndex] > data[smallerChildIndex] + 1) {
-                            smallerChildIndex += 1;
+                            smallerChildIndex = smallerChildIndex + 1;
                         }
                     }
                     //找到最小子节点，如果比当前节点小，就交换
@@ -74,8 +73,8 @@ public class HeapSort {
 
 
     public static void main(String[] args) {
-
-        heapSort(new int[]{2, 3, 5, 6, 73, 4, 5, 52, 51, 134, 562, 6, 3, 23, 5, 253, 14}, true);
+        int[] input = new int[]{251,2412552,23,2,43,1,6,43,52,6,7,45,3,1};
+        System.out.println(Arrays.toString(heapSort(input, false)));
 
     }
 }
