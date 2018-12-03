@@ -22,7 +22,7 @@ https://www.cnblogs.com/chengxiao/p/6129630.html
 ## Straight Insertion Sort
 每一步将一个待排序的记录，插入到前面已经排好序的有序序列中去，直到插完所有元素为止。
 - best: O(n), worst: O(n^2)
-- Stable
+- stable
 
 ## Merge Sort
 - nlog(n)
