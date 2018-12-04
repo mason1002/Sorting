@@ -14,7 +14,7 @@ public class BubbleSort {
 
         for (int i = 0; i < data.length - 1; i++) {
 
-            int tmp = 0;
+            int tmp;
 
             for (int j = 0; j < data.length - i - 1; j++) {
                 if (reverse) {
