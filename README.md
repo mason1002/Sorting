@@ -1,5 +1,5 @@
 # Sorting
-Implement 10 classical sorting algorithms in Java
+Implement 10 classical sorting algorithms
 
 ## Bubble Sort
 - O(n^2)
