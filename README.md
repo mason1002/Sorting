@@ -49,3 +49,6 @@ https://www.cnblogs.com/chengxiao/p/6129630.html
 ## Shell Sort
 - O(nlogn)
 - unstable
+
+# Reference
+- Python: https://www.cnblogs.com/woider/p/6835466.html
